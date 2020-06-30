@@ -1,0 +1,17 @@
+<form ng-app="">
+	身分證字號 <input type="String" name="id" required="required" />
+  <br />使用者名稱 <input type="text" ng-model="account2" ng-required="true" />
+  <br />密碼 <input type="text" name="code" ng-model="model.code"  required minlength="5" maxlength="12"
+ng-pattern="model.codePattern" />
+	<span class="invld-hint" ng-show="myForm.code.$error.pattern">
+
+</span>
+</form>
+<br>條件
+<br>1. 固定密碼必須設定為6~12位之英數字混合，須包含一個英文字母大寫及小寫。
+<br>2. 不得與使用者名稱相同，且不得為個人身分證字號等資料。
+<br>3. 不得為全部相同英/數字，且英文或數字任一不得三碼相同。（例如：Aaa222不行；aaaA223不行；222AaB不行）
+<br>4. 不得為連續英文或連號數字，且英文或數字任一不得三碼連續。（例如：Abc123不行；Aabc124不行；123Abd不行）
+<br>5. 變更使用者名稱或固定密碼不得與前一次相同。
+<br>6. 不得有特殊字元，例如「：」或「’」等，且字元間不得有「空白/SPACE」間隔。
+<br>7. 不可包含下列字眼(忽略大小寫): ADMIN、ADMINISTRATOR、PASSWORD、 STANDARD、CHARTERED、ROOT
